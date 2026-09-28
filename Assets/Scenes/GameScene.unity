@@ -4603,6 +4603,10 @@ PrefabInstance:
       propertyPath: defaultValues
       value: 
       objectReference: {fileID: 11400000, guid: 059c47e88fc5ed44cac4a3911f6599bf, type: 2}
+    - target: {fileID: 5244152854112330421, guid: 211e8f447b0fa614a9d387b2cb13ae82, type: 3}
+      propertyPath: movementSpeed
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 5574052149758657227, guid: 211e8f447b0fa614a9d387b2cb13ae82, type: 3}
       propertyPath: m_Name
       value: Right Player
@@ -7059,6 +7063,10 @@ PrefabInstance:
       propertyPath: defaultValues
       value: 
       objectReference: {fileID: 11400000, guid: 17a3fff567c734941baa64bf4fba276a, type: 2}
+    - target: {fileID: 5244152854112330421, guid: 211e8f447b0fa614a9d387b2cb13ae82, type: 3}
+      propertyPath: movementSpeed
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 5574052149758657227, guid: 211e8f447b0fa614a9d387b2cb13ae82, type: 3}
       propertyPath: m_Name
       value: Left Player
