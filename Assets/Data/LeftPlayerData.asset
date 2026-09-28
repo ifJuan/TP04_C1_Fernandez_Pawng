@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c666a98c8049d9b438eef09f22cfd55d, type: 3}
   m_Name: LeftPlayerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayersDefaultValues
-  movementSpeed: 100
+  movementSpeed: 500
   initialColor: {r: 1, g: 1, b: 1, a: 1}
   upKey: 119
   downKey: 115

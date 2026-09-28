@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460ef7320e54904a8ac0c1fd38d701c, type: 3}
   m_Name: BallDefaultData
   m_EditorClassIdentifier: Assembly-CSharp::BallDefaultValuesSo
-  initialForce: 500
+  initialForce: 5
   bounceSpeedReaction: 1.01
