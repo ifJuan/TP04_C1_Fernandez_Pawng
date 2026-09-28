@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using UnityEngine;
 
 public interface PlayerSubscriber
@@ -109,24 +108,25 @@ public class GameStateManager: MonoBehaviour
     //State changes
     public void Play()
     {
-        if (state == State.Finished)
-        {
-            SetPlayersToInitialPosition();
-            timeCount = gameDuration;
-            leftSideGoals = 0;
-            rightSideGoals = 0;
-        }
-        if (state == State.StandBy)
-        {
-            SetPlayersToInitialPosition();
-            timeCount = gameDuration;
-            UpdateUITime(timeCount);
-        }
         if (state != State.Playing)
         {
-            timeCount = gameDuration;
+            if (state == State.Finished)
+            {
+                SetPlayersToInitialPosition();
+                Instantiate(ballPrefab, new Vector2(0, 0), Quaternion.identity);
+                timeCount = gameDuration;
+                leftSideGoals = 0;
+                rightSideGoals = 0;
+                ReStartScoreboard();
+            }
+            if (state == State.StandBy)
+            {
+                SetPlayersToInitialPosition();
+                Instantiate(ballPrefab, new Vector2(0, 0), Quaternion.identity);
+                timeCount = gameDuration;
+                UpdateUITime(timeCount);
+            }
             state = State.Playing;
-            Instantiate(ballPrefab, new Vector2(0, 0), Quaternion.identity);
             Time.timeScale = 1f;
         }
     }
@@ -279,11 +279,24 @@ public class GameStateManager: MonoBehaviour
             StandBy();
 
         RemoveBallsFromField();
+        UpdateScoreboard(leftSideGoals, rightSideGoals);
+    }
 
+    // Scoreboard
+    private void UpdateScoreboard(int leftSideGoals, int rightSideGoals)
+    {
         foreach (var gameUI in gameUISubscribers)
         {
             gameUI.ScoreChanged(leftSideGoals, rightSideGoals);
-            gameUI.StopGame(); 
+            gameUI.StopGame();
+        }
+    }
+
+    private void ReStartScoreboard()
+    {
+        foreach (var gameUI in gameUISubscribers)
+        {
+            gameUI.StartGame();
         }
     }
 

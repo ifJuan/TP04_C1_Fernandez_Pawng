@@ -16,7 +16,7 @@ public class CanvasManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKey(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             if (GameStateManager.Instance.state != GameStateManager.State.MainMenu)
             {

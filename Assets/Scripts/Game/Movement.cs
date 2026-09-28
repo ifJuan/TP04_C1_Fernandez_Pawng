@@ -1,9 +1,6 @@
 using System.Drawing;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Rendering;
-using static UnityEditor.Experimental.GraphView.GraphView;
-using static UnityEngine.Rendering.DebugUI;
 
 public class Movement : MonoBehaviour, PlayerSubscriber
 {
