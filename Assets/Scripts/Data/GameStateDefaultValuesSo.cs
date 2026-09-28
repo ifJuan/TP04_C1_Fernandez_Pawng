@@ -12,4 +12,5 @@ public class GameStateDefaultValuesSo : ScriptableObject
     public UnityEngine.Color ballColor;
     [Header("Game")]
     public int gameDuration;
+    public int goalsAmount;
 }
