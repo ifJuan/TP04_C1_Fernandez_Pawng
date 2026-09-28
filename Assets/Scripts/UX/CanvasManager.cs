@@ -9,11 +9,6 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject creditsPanel;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))

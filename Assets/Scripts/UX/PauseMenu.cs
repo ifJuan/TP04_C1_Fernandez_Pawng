@@ -40,6 +40,10 @@ public class PauseMenu : MonoBehaviour
         settingsText.text = "Settings";
         creditsText.text = "Credits";
         exitText.text = "Exit";
+
+        #if UNITY_WEBGL && !UNITY_EDITOR
+            btnExit.gameObject.SetActive(false);
+        #endif
     }
 
     private void BtnContinueClicked()
